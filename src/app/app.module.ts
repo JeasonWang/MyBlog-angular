@@ -21,6 +21,7 @@ import { CategoryComponent } from './back-end/category/category.component';
 import { WijmoComponent } from './components/wijmo/wijmo.component';
 import { LoginComponent } from './login/login.component';
 import { Footer2Component } from './fore-end/footer2/footer2.component';
+import { ErrorpageComponent } from './errorpage/errorpage.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { Footer2Component } from './fore-end/footer2/footer2.component';
     CategoryComponent,
     WijmoComponent,
     LoginComponent,
-    Footer2Component
+    Footer2Component,
+    ErrorpageComponent
   ],
   imports: [
     BrowserModule,

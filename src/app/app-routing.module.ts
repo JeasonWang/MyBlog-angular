@@ -21,9 +21,9 @@ const routes: Routes = [
   { path: 'blog', component: BlogComponent },
 
   { path: 'admin', component: AdminComponent },
-  { path: 'admin/article', component: ArticleComponent },
-  { path: 'admin/category', component: CategoryComponent },
-  { path: 'admin/comment', component: CommentComponent },
+  { path: 'article', component: ArticleComponent },
+  { path: 'category', component: CategoryComponent },
+  { path: 'comment', component: CommentComponent },
 
   { path: 'wijmo', component: WijmoComponent }
 ];
