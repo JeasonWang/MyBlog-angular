@@ -1,0 +1,30 @@
+#top {
+  margin-top: 10px;
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px rgb(231, 231, 231) solid;
+}
+
+
+#top a {
+  margin: 20px 30px;
+  color: #000000;
+}
+
+#top a:hover {
+  color: blue;
+  text-decoration: none;
+  padding-bottom: 10px;
+}
+
+#top {
+  margin-top: 10px;
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px rgb(231, 231, 231) solid;
+}
+
+#logo img {
+  z-index: -1;
+  height: 30px;
+}

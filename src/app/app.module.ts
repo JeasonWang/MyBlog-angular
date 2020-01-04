@@ -20,6 +20,7 @@ import { ArticleComponent } from './back-end/article/article.component';
 import { CategoryComponent } from './back-end/category/category.component';
 import { WijmoComponent } from './components/wijmo/wijmo.component';
 import { LoginComponent } from './login/login.component';
+import { Footer2Component } from './fore-end/footer2/footer2.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { LoginComponent } from './login/login.component';
     ArticleComponent,
     CategoryComponent,
     WijmoComponent,
-    LoginComponent
+    LoginComponent,
+    Footer2Component
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,32 @@
+#foot {
+	font-size: 12px!important;
+	margin: 30px auto;
+	width: 60%;
+	padding-top: 20px;
+	border-top: 1px rgb(231, 231, 231) solid;
+	color: rgb(147, 147, 147);
+	max-height: 70px;
+}
+
+#leftContent {
+	float: left;
+	width: 35%;
+}
+
+#leftContent span {
+	display: block;
+	padding-bottom: 10px;
+}
+
+#rightContent {
+	float: right;
+}
+
+#footIcon {
+	text-align: right;
+	padding-bottom: 20px;
+	height: 59px;
+}
+#logo{
+	height: 55px;
+}

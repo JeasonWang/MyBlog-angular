@@ -1,6 +1,12 @@
-
 #footer {
   height: 70px;
-  width: 100%;
-  border: red solid 2px;
+}
+#info {
+  margin: 5px 0px 20px 20px;
+  color: rgb(198, 198, 198);
+  font-size: 12px;
+}
+.icon {
+  height: 36px;
+  margin: 20px 5px 0px 0px;
 }
