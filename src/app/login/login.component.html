@@ -6,10 +6,21 @@
 
   <div>
     <label>密码:</label>
-    <input [(ngModel)]="username" type="text">
+    <input [(ngModel)]="password" type="text">
   </div>
 
   <div>
-    <button (click)='login()'>提交</button>
+    <button (click)="getUsers()">getUsers</button>
+    <button (click)="getUserById(1)">getUserById</button>
   </div>
 </div>
+<div *ngIf="users!=null">
+  <div *ngFor="let user of users">
+    {{user.username}}
+  </div>
+</div>
+
+<div *ngIf="user!=null">
+  {{user.username}}
+</div>
+

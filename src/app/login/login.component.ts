@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { User } from '../domain/user';
+import { LoginserviceService } from './loginservice.service';
+import { Observable } from 'rxjs';
+
+
 
 
 @Component({
@@ -8,17 +12,24 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  public username = '';
-  public password = '';
+  username = '';
+  password = '';
+  users: User[] = null;
+  user: User = null;
 
-  constructor(private http: HttpClient) { }
+  constructor(private LoginService: LoginserviceService) { }
 
   ngOnInit() {
   }
 
-  public login(): void {
-    console.log('login');
-    this.http.get('url');
+  getUsers() {
+    return this.LoginService.getUsers().subscribe(users => this.users = users);
   }
+
+  getUserById(id: number) {
+    return this.LoginService.getUser(id).subscribe(user => this.user = user);
+  }
+
+
 
 }

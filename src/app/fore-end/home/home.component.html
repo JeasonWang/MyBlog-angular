@@ -14,31 +14,19 @@
 
     <!--文章简介-->
     <div>
-      <h4 id="articleSummary">博客简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介</h4>
+      <h4 id="articleSummary"><span *ngIf="articleListLatests.length>0">{{articleListLatests[0].summary}}</span></h4>
     </div>
-
     <!--查看文章按钮-->
     <button id="showArticle" type="button" class="btn" articleId="">查看<span class="glyphicon glyphicon-chevron-right"></span></button>
   </div>
 
   <!--右下角的题图-->
   <div class="smallArticlePictures">
-    <div class="smallPictures">
-      <img src="../../assets/img/about/titu.jpg" picturelUrl="" location="0" articleId="" title="" summary="" />
-    </div>
-    <div class="smallPictures">
-      <img src="../../assets/img/about/titu.jpg" picturelUrl="" location="1" articleId="" title="" summary="" />
-    </div>
-    <div class="smallPictures">
-      <img src="../../assets/img/about/titu.jpg" picturelUrl="" location="2" articleId="" title="" summary="" />
-    </div>
-    <div class="smallPictures">
-      <img src="../../assets/img/about/titu.jpg" picturelUrl="" location="3" articleId="" title="" summary="" />
-    </div>
-    <div class="smallPictures">
-      <img src="../../assets/img/about/titu.jpg" picturelUrl="" location="4" articleId="" title="" summary="" />
+    <div *ngIf="articleListLatests.length>0">
+      <div class="smallPictures" *ngFor="let item of articleListLatests">
+        <img src="../../assets/img/about/titu.jpg" picturelUrl='item.picturelUrl' location="0" articleId="item.id" title="item.title" summary="item.summary" />
+      </div>
     </div>
   </div>
-
 </div>
 <app-footer></app-footer>
