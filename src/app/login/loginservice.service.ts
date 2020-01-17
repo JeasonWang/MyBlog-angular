@@ -12,7 +12,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class LoginserviceService {
-  url = 'http://127.0.0.1:8080/admin/user';
+  url = 'apidata/admin/user';
 
   constructor(private http: HttpClient) { }
 
@@ -37,6 +37,12 @@ export class LoginserviceService {
   updateUser(user: User): Observable<any> {
     return this.http.put(this.url, user, httpOptions).pipe(
       catchError(this.handleError<any>('updateUser'))
+    );
+  }
+
+  checkUser(user: User): Observable<any> {
+    return this.http.put(this.url, user, httpOptions).pipe(
+      catchError(this.handleError<any>('login'))
     );
   }
 

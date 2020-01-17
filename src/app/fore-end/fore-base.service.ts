@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { ArticleListLatest, CategoryList } from '../domain/backdata';
+import { ArticleList, CategoryList } from '../domain/backdata';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -15,16 +15,31 @@ const httpOptions = {
 })
 export class ForeBaseService {
 
-  private articleListLastestUrl = 'http://localhost:8080/api/article/list/lastest';
-  private categoryListUrl = 'http://localhost:8080/api/category/list';
+  private articleListLastestUrl = 'apidata/api/article/list/lastest';
+  private categoryListUrl = 'apidata/api/category/list';
+  private articleListUrl = 'apidata/api/article/list';
+  private articleLisSortUrl = 'apidata/api/article/list/sort';
 
   constructor(
     private http: HttpClient) { }
 
-  getLastestArticle(): Observable<ArticleListLatest[]> {
-    return this.http.get<ArticleListLatest[]>(this.articleListLastestUrl)
+  getLastestArticle(): Observable<ArticleList[]> {
+    return this.http.get<ArticleList[]>(this.articleListLastestUrl)
       .pipe(
-        catchError(this.handleError<ArticleListLatest[]>('getHeroes', []))
+        catchError(this.handleError<ArticleList[]>('getHeroes', []))
+      );
+  }
+  getArticleList(): Observable<ArticleList[]> {
+    return this.http.get<ArticleList[]>(this.articleListUrl)
+      .pipe(
+        catchError(this.handleError<ArticleList[]>('getHeroes', []))
+      );
+  }
+
+  getArticleListSort(): Observable<ArticleList[]> {
+    return this.http.get<ArticleList[]>(this.articleLisSortUrl)
+      .pipe(
+        catchError(this.handleError<ArticleList[]>('getHeroes', []))
       );
   }
 

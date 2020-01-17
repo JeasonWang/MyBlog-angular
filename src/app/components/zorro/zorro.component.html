@@ -1,0 +1,56 @@
+<nz-layout>
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+    <div class="logo"></div>
+    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+      <li nz-submenu nzTitle="数据统计" nzIcon="user">
+        <ul>
+          <li nz-menu-item>浏览量统计</li>
+          <li nz-menu-item>日志统计</li>
+          <li nz-menu-item>留言统计</li>
+        </ul>
+      </li>
+      <li nz-submenu nzTitle="博文分类" nzIcon="team">
+        <ul>
+          <li nz-menu-item>博文分类</li>
+          <li nz-menu-item>新增分类</li>
+        </ul>
+      </li>
+      <li nz-submenu nzTitle="博文管理" nzIcon="user">
+        <ul>
+          <li nz-menu-item>博文列表</li>
+          <li nz-menu-item>新增博文</li>
+        </ul>
+      </li>
+      <li nz-submenu nzTitle="评论管理" nzIcon="team">
+        <ul>
+          <li nz-menu-item>评论</li>
+          <li nz-menu-item>评论</li>
+        </ul>
+      </li>
+      <li nz-menu-item>
+        <i nz-icon nzType="设置"></i>
+        <span>File</span>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+      <i
+        class="trigger"
+        nz-icon
+        [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+        (click)="isCollapsed = !isCollapsed"
+      ></i>
+    </nz-header>
+    <nz-content>
+      <nz-breadcrumb>
+        <nz-breadcrumb-item>User</nz-breadcrumb-item>
+        <nz-breadcrumb-item>Bill</nz-breadcrumb-item>
+      </nz-breadcrumb>
+      <div class="inner-content">
+        Bill is a cat.
+      </div>
+    </nz-content>
+    <nz-footer>Ant Design ©2019 Implement By Angular</nz-footer>
+  </nz-layout>
+</nz-layout>

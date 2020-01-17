@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CategoryList } from 'src/app/domain/backdata';
+import { CategoryList, ArticleList } from 'src/app/domain/backdata';
 import { ForeBaseService } from '../fore-base.service';
 
 @Component({
@@ -9,14 +9,26 @@ import { ForeBaseService } from '../fore-base.service';
 })
 export class BlogComponent implements OnInit {
   categoryLists: CategoryList[] = [];
+  articleLists: ArticleList[] = [];
+  isCollapsed = false;
 
   constructor(private foreBaseService: ForeBaseService) { }
 
   ngOnInit() {
+    this.getCategoryList();
+    this.getArticleList();
   }
 
   public getCategoryList() {
     this.foreBaseService.getCategoryList().subscribe(categoryLists => this.categoryLists = categoryLists);
+  }
+
+  public getArticleList() {
+    this.foreBaseService.getLastestArticle().subscribe(articleLists => this.articleLists = articleLists);
+  }
+
+  public clickdiv(): void{
+    alert('click div');
   }
 
 }

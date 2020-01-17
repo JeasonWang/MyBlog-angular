@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticleWithPictureDto } from '../../domain/backdata';
+import { BackBaseService } from '../back-base.service';
 
 @Component({
   selector: 'app-article',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticleComponent implements OnInit {
 
-  constructor() { }
+  articleWithPictureDtos: ArticleWithPictureDto[] = [];
+
+  constructor(private service: BackBaseService) {}
 
   ngOnInit() {
-  }
-
+    this.service.getlistAllArticleInfo().subscribe(
+      (articleWithPictureDtos: ArticleWithPictureDto[]) => { this.articleWithPictureDtos = articleWithPictureDtos; }
+    );
+    }
 }

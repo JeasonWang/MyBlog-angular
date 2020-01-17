@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../domain/user';
 import { LoginserviceService } from './loginservice.service';
-import { Observable } from 'rxjs';
-
+import { Router } from '@angular/router';
 
 
 
@@ -15,19 +14,22 @@ export class LoginComponent implements OnInit {
   username = '';
   password = '';
   users: User[] = null;
-  user: User = null;
+  user: User = new User();
+  back: any;
 
-  constructor(private LoginService: LoginserviceService) { }
+  constructor(private LoginService: LoginserviceService, private router: Router) { }
 
   ngOnInit() {
   }
 
-  getUsers() {
-    return this.LoginService.getUsers().subscribe(users => this.users = users);
-  }
-
-  getUserById(id: number) {
-    return this.LoginService.getUser(id).subscribe(user => this.user = user);
+  login(): void {
+    this.user.username = this.username;
+    this.user.password = this.password;
+    this.back = this.LoginService.checkUser(this.user);
+    console.log(this.back);
+    if (this.back) {
+      this.router.navigateByUrl('/home');
+    }
   }
 
 

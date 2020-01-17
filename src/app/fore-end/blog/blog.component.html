@@ -1,28 +1,129 @@
 <app-header></app-header>
-<div style="clear: both;"></div>
-<!--中间的内容-->
-<div id="content">
-  <div id="category">
-    <a href="?">全部</a>
-    <template id="categoryInfo">
-      <div class="categoryInfo">
-        <a id="categoryName" href=""></a>
+
+<div id="main">
+
+  <div class="left">
+    <article class="excerpt" *ngFor="let item of [1,2,3,4,5,6,7,8,9]">
+      <header>
+        <h4>
+          <a class="label label-important" href="https://cuiqingcai.com/category/technique/python">Python<i class="label-arrow"></i></a>
+          <a target="_blank" href="https://cuiqingcai.com/8703.html" title="新书发售 限时折扣｜《Python3 反爬虫原理与绕过实战》">新书发售 限时折扣｜《Python3 反爬虫原理与绕过实战》  </a>
+        </h4>
+      </header>
+      <div class="focus">
+        <a target="_blank" href="https://cuiqingcai.com/8703.html">
+          <img class="thumb" src="https://cuiqingcai.com/wp-content/themes/Yusi/timthumb.php?src=https://qiniu.cuiqingcai.com/wp-content/uploads/2020/01/c2da3d6e-0e00-4b39-bac0-06ebff42b0a7_0.png&amp;h=123&amp;w=200&amp;q=90&amp;zc=1&amp;ct=1" alt="新书发售 限时折扣｜《Python3 反爬虫原理与绕过实战》">
+        </a>
       </div>
-    </template>
+      <span class="note"> 无论是在学习还是工作中，反爬虫技术是所有爬虫工程师都要面对的问题。
+    常见的反爬虫原理和绕过技巧也是中高级爬虫工程师面试中关注的焦点， 尤其是那些竞争激烈的大型互联网企业。作为一名开发者，了解反爬虫原理和绕过技巧有助于设计出更合理的反爬虫策略，这会使你在同行中脱颖而出，大放异彩。
+    ...</span>
+      <p class="auth-span">
+          <span class="muted"><i class="fa fa-clock-o"></i> 2020-01-03 19:55&nbsp;&nbsp;</span>
+          <span class="muted"><i class="fa fa-comments-o"></i> <a target="_blank" href="https://cuiqingcai.com/8703.html#comments">2评论&nbsp;&nbsp;</a></span>
+          <span class="muted"><i class="fa fa-comments-o"></i> <a target="_blank" href="https://cuiqingcai.com/8703.html#comments">发表评论&nbsp;&nbsp;</a></span>
+          <span class="muted"><i class="fa fa-comments-o"></i> <a target="_blank" href="https://cuiqingcai.com/8703.html#comments">阅读全文</a></span>
+      </p>
+    </article>
+
   </div>
 
-  <div id="articleInfos">
-    <template id="articleInfo">
-      <div class="articleInfo" onclick="showArticle(this)">
-        <div class="articlePicture">
-          <img src="">
+  <div class="right">
+
+    <div class="rightdiv">
+
+      <div class="widget-about">
+        <div class="title">
+          <h2>关于本站</h2>
         </div>
-        <div class="articleTitle">
-          <h5 id="articleTitle"></h5>
+        <div class="row2">
+          <div style="width: 30%;">
+            <img src="../../../assets/img/avatar(3).jpg" alt="QR Code" style="width: 150px; height: 120px;">
+          </div>
+          <div class="zhuti">
+            <p>博客初心</p>
+            <p>程序人生，永不止步</p>
+          </div>
         </div>
-        <h6 style="display: none;"></h6>
+        <div class="row3">
+          <div class="weixin" *ngFor="let item of [1,2,3,4]">
+            <img src="../../../assets/img/weixin1.jpg" alt="" style="width: 40px; height: 40px;">
+          </div>
+        </div>
+
+        <div class="textwidget">
+          <ul class="">
+              <li><i class="fa fa-file-o"></i> 文章总数：25 篇</li>
+              <li><i class="fa fa-commenting-o"></i> 留言数量：23 条</li>
+              <li><i class="fa fa-folder-o"></i> 分类数量：22 个</li>
+              <li><i class="fa fa-tags"></i> 标签总数：35 个</li>
+              <li><i class="fa fa-link"></i> 链接数量：2 个</li>
+              <li><i class="fa fa-eye"></i> 浏览总量：140 次</li>
+              <li><i class="fa fa-pencil-square-o"></i> 最后更新：<span style="color:#2F889A">
+                                      2019年04月25日</span>
+              </li>
+          </ul>
       </div>
-    </template>
+
+      </div>
+    </div>
+
+    <div class="rightdiv">
+      <div class="widget d_postlist">
+        <div class="title">
+          <h2>猜你喜欢</h2>
+        </div>
+        <ul>
+          <li class="like-li">
+            <a href="https://cuiqingcai.com/5413.html" title="[Python3网络爬虫开发实战] 1.8-爬虫框架的安装">
+              <span class="thumbnail">
+                <img src="https://cuiqingcai.com/wp-content/themes/Yusi/timthumb.php?src=https://qiniu.cuiqingcai.com/wp-content/uploads/2018/02/1.8.jpg&amp;h=64&amp;w=100&amp;q=90&amp;zc=1&amp;ct=1" alt="[Python3网络爬虫开发实战] 1.8-爬虫框架的安装">
+              </span>
+              <span class="text">[Python3网络爬虫开发实战] 1.8-爬虫框架的安装</span>
+              <span class="muted">2018-01-25</span><span class="muted">551评论</span>
+            </a>
+          </li>
+          <li class="like-li"><a href="https://cuiqingcai.com/5432.html" title="[Python3网络爬虫开发实战] 1.8.4-Scrapy-Redis的安装"><span class="thumbnail"><img src="https://cuiqingcai.com/wp-content/themes/Yusi/timthumb.php?src=https://qiniu.cuiqingcai.com/wp-content/uploads/2018/02/1.8.4.jpg&amp;h=64&amp;w=100&amp;q=90&amp;zc=1&amp;ct=1" alt="[Python3网络爬虫开发实战] 1.8.4-Scrapy-Redis的安装"></span><span class="text">[Python3网络爬虫开发实战] 1.8.4-Scrapy-Redis的安装</span><span class="muted">2018-01-25</span><span class="muted">370评论</span></a></li>
+          <li class="like-li"><a href="https://cuiqingcai.com/2227.html" title="WordPress从Apache迁移到Nginx过程"><span class="thumbnail"><img src="https://cuiqingcai.com/wp-content/themes/Yusi/timthumb.php?src=https://qiniu.cuiqingcai.com/wp-content/uploads/2015/11/wallpaper_5266633-e1447405155617.jpg&amp;h=64&amp;w=100&amp;q=90&amp;zc=1&amp;ct=1" alt="WordPress从Apache迁移到Nginx过程"></span><span class="text">WordPress从Apache迁移到Nginx过程</span><span class="muted">2015-11-13</span><span class="muted">347评论</span></a></li>
+          <li class="like-li"><a href="https://cuiqingcai.com/4804.html" title="HTTP 206 获取文件部分内容和范围请求"><span class="thumbnail"><img src="https://cuiqingcai.com/wp-content/themes/Yusi/timthumb.php?src=https://cuiqingcai.com/wp-content/themes/Yusi/img/pic/5.jpg&amp;h=64&amp;w=100&amp;q=90&amp;zc=1&amp;ct=1" alt="HTTP 206 获取文件部分内容和范围请求"></span><span class="text">HTTP 206 获取文件部分内容和范围请求</span><span class="muted">2017-09-15</span><span class="muted">327评论</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="rightdiv">
+      <div class="widget d_tag">
+        <div class="title">
+          <h2>标签云</h2>
+        </div>
+        <div class="d_tags">
+          <a title="" href="https://cuiqingcai.com/tag/python" data-original-title="216个话题">Python (216)</a>
+          <a title="" href="https://cuiqingcai.com/tag/%e7%88%ac%e8%99%ab" data-original-title="194个话题">爬虫 (194)</a>
+          <a title="" href="https://cuiqingcai.com/tag/php" data-original-title="31个话题">PHP (31)</a>
+          <a title="" href="https://cuiqingcai.com/tag/js" data-original-title="26个话题">JS (26)</a>
+          <a title="" href="https://cuiqingcai.com/tag/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0" data-original-title="16个话题">深度学习 (16)</a>
+          <a title="" href="https://cuiqingcai.com/tag/html" data-original-title="12个话题">HTML (12)</a>
+          <a title="" href="https://cuiqingcai.com/tag/opengl" data-original-title="11个话题">OpenGL (11)</a>
+          <a title="" href="https://cuiqingcai.com/tag/jquery" data-original-title="9个话题">jQuery (9)</a>
+          <a title="" href="https://cuiqingcai.com/tag/css" data-original-title="8个话题">CSS (8)</a>
+          <a title="" href="https://cuiqingcai.com/tag/svg" data-original-title="1个话题">SVG (1)</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="rightdiv">
+      <div class="hot-posts">
+        <h2 class="title">热门排行</h2>
+        <ul>
+          <li *ngFor="let item of [1,2,3,4,5]">
+            <span class="label label-1">1</span>
+            <a href="https://cuiqingcai.com/1052.html" title="Python2爬虫学习系列教程">Python2爬虫学习系列教程</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
   </div>
 </div>
+
+
 <app-footer2></app-footer2>

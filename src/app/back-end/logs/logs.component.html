@@ -1,0 +1,30 @@
+<nz-table
+      #rowSelectionTable
+      nzShowSizeChanger
+      [nzData]="listOfAllData"
+      (nzCurrentPageDataChange)="currentPageDataChange($event)"
+    >
+      <thead>
+        <tr>
+          <th
+            nzShowCheckbox
+            nzShowRowSelection
+            [nzSelections]="listOfSelection"
+            [(nzChecked)]="isAllDisplayDataChecked"
+            [nzIndeterminate]="isIndeterminate"
+            (nzCheckedChange)="checkAll($event)"
+          ></th>
+          <th>id</th>
+          <th>ip</th>
+          <th>createBy</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of rowSelectionTable.data">
+          <td nzShowCheckbox [(nzChecked)]="mapOfCheckedId[data.id]" (nzCheckedChange)="refreshStatus()"></td>
+          <td>{{ data.id }}</td>
+          <td>{{ data.ip }}</td>
+          <td>{{ data.createBy }}</td>
+        </tr>
+      </tbody>
+    </nz-table>

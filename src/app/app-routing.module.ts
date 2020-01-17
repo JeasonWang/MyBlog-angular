@@ -8,8 +8,13 @@ import { AdminComponent } from './back-end/admin/admin.component';
 import { ArticleComponent } from './back-end/article/article.component';
 import { CategoryComponent } from './back-end/category/category.component';
 import { CommentComponent } from './back-end/comment/comment.component';
-import { WijmoComponent } from './components/wijmo/wijmo.component';
 import { LoginComponent } from './login/login.component';
+import { ZorroComponent } from './components/zorro/zorro.component';
+import { MainframeComponent } from './back-end/mainframe/mainframe.component';
+import { DataComponent } from './back-end/data/data.component';
+import { CommentsComponent } from './back-end/comments/comments.component';
+import { LogsComponent } from './back-end/logs/logs.component';
+import { ViewsComponent } from './back-end/views/views.component';
 
 
 const routes: Routes = [
@@ -20,12 +25,20 @@ const routes: Routes = [
   { path: 'resume', component: ResumeComponent },
   { path: 'blog', component: BlogComponent },
 
-  { path: 'admin', component: AdminComponent },
-  { path: 'article', component: ArticleComponent },
-  { path: 'category', component: CategoryComponent },
-  { path: 'comment', component: CommentComponent },
+  { path: 'back', component: MainframeComponent, children: [
+    { path: '', component : DataComponent },
+    { path: 'logs', component : LogsComponent },
+    { path: 'comments', component : CommentsComponent },
+    { path: 'views', component : ViewsComponent },
 
-  { path: 'wijmo', component: WijmoComponent }
+    { path: 'admin', component: AdminComponent },
+    { path: 'data', component : DataComponent },
+    { path: 'article', component: ArticleComponent },
+    { path: 'category', component: CategoryComponent },
+    { path: 'comment', component: CommentComponent },
+  ] },
+
+  { path: 'zorro', component: ZorroComponent }
 ];
 
 @NgModule({

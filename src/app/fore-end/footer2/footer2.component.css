@@ -1,7 +1,7 @@
 #foot {
 	font-size: 12px!important;
 	margin: 30px auto;
-	width: 60%;
+	width: 100%;
 	padding-top: 20px;
 	border-top: 1px rgb(231, 231, 231) solid;
 	color: rgb(147, 147, 147);
@@ -10,7 +10,8 @@
 
 #leftContent {
 	float: left;
-	width: 35%;
+  width: 35%;
+  margin-left: 10%;
 }
 
 #leftContent span {
@@ -19,7 +20,8 @@
 }
 
 #rightContent {
-	float: right;
+  float: right;
+  margin-right: 10%;
 }
 
 #footIcon {
