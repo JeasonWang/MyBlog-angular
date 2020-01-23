@@ -13,9 +13,8 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   username = '';
   password = '';
-  users: User[] = null;
-  user: User = new User();
-  back: any;
+  back = false;
+  user: User;
 
   constructor(private LoginService: LoginserviceService, private router: Router) { }
 
@@ -23,10 +22,18 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
+    this.user = new User();
     this.user.username = this.username;
     this.user.password = this.password;
-    this.back = this.LoginService.checkUser(this.user);
-    console.log(this.back);
+    this.LoginService.login(this.user).subscribe(
+      (user1: User) => { this.user = user1;}
+    );
+    setTimeout(() => {
+      if(this.user != null){
+        this.back = true;
+        return;
+      }
+    }, 100);
     if (this.back) {
       this.router.navigateByUrl('/home');
     }

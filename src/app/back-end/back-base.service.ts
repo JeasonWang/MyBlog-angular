@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-import { ArticleList, CategoryList, SysLog, SysView, ArticleWithPictureDto } from '../domain/backdata';
+import { ArticleList, CategoryList, SysLog, SysView, ArticleWithPictureDto, CategoryInfo, ArticleDto, Comment1, ArticleCommentDto } from '../domain/backdata';
 
 
 const httpOptions = {
@@ -40,6 +40,69 @@ export class BackBaseService {
         catchError(this.handleError<ArticleWithPictureDto[]>('getlistAllArticleInfo', []))
       );
   }
+  listArticleInfo(id: number): Observable<ArticleWithPictureDto[]> {
+    return this.http.get<ArticleWithPictureDto[]>('apidata/api、article/list/sort/' + id)
+      .pipe(
+        catchError(this.handleError<ArticleWithPictureDto[]>('getlistAllArticleInfo', []))
+      );
+  }
+  listLastestArticle(): Observable<ArticleWithPictureDto[]> {
+    return this.http.get<ArticleWithPictureDto[]>('apidata/api/article/list/lastest')
+      .pipe(
+        catchError(this.handleError<ArticleWithPictureDto[]>('listLastestArticle', []))
+      );
+  }
+  getArticleById(id: number): Observable<ArticleDto[]> {
+    return this.http.get<ArticleDto[]>('apidata/api/article/' + id)
+      .pipe(
+        catchError(this.handleError<ArticleDto[]>('getArticleById', []))
+      );
+  }
+  listAllCategoryInfo(): Observable<CategoryInfo[]> {
+    return this.http.get<CategoryInfo[]>('apidata/api/category/list')
+      .pipe(
+        catchError(this.handleError<CategoryInfo[]>('listAllCategoryInfo', []))
+      );
+  }
+
+  listAllComment(): Observable<Comment1[]> {
+    return this.http.get<Comment1[]>('apidata/api/comment/list')
+      .pipe(
+        catchError(this.handleError<Comment1[]>('listAllComment', []))
+      );
+  }
+
+  listMessageByArticleId(id: number): Observable<ArticleCommentDto[]> {
+    return this.http.get<ArticleCommentDto[]>('apidata/api/comment/article/' + id)
+      .pipe(
+        catchError(this.handleError<ArticleCommentDto[]>('listMessageByArticleId', []))
+      );
+  }
+
+
+  getCategoryInfo(id: number): Observable<CategoryInfo[]> {
+    return this.http.get<CategoryInfo[]>('apidata/admin/category/' + id)
+      .pipe(
+        catchError(this.handleError<CategoryInfo[]>('getCategoryInfo', []))
+      );
+  }
+  replyComment(id: number): Observable<string> {
+    return this.http.get<string>('apidata/admin/comment/reply/' + id)
+      .pipe();
+  }
+  getCommentById(id: number): Observable<Comment1[]> {
+    return this.http.get<Comment1[]>('apidata/admin/comment/reply/' + id)
+      .pipe(
+        catchError(this.handleError<Comment1[]>('getCommentById', []))
+      );
+  }
+  getArticleDtoById(id: number): Observable<ArticleDto[]> {
+    return this.http.get<ArticleDto[]>('apidata/admin/article/' + id)
+      .pipe(
+        catchError(this.handleError<ArticleDto[]>('getArticleDtoById', []))
+      );
+  }
+
 
 
 

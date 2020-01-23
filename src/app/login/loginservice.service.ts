@@ -12,10 +12,15 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class LoginserviceService {
-  url = 'apidata/admin/user';
+  url = 'apidata/admin/login';
 
   constructor(private http: HttpClient) { }
 
+  login(user: User): Observable<User> {
+    return this.http.post<User>(this.url, user, httpOptions).pipe(
+      catchError(this.handleError<User>('login'))
+    );
+  }
 
   /** GET Users from the server */
   getUsers(): Observable<User[]> {
