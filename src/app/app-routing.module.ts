@@ -18,14 +18,16 @@ import { ViewsComponent } from './back-end/views/views.component';
 
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full'},
+  { path: 'login', component: LoginComponent},
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'resume', component: ResumeComponent },
   { path: 'blog', component: BlogComponent },
 
-  { path: 'back', component: MainframeComponent, children: [
+  { path: 'back',
+   component: MainframeComponent,
+   children: [
     { path: '', component : DataComponent },
     { path: 'logs', component : LogsComponent },
     { path: 'comments', component : CommentsComponent },
