@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BackBaseService } from '../back-base.service';
+import { Comment1 } from 'src/app/domain/backdata';
 
 interface ItemData {
   id: number;
@@ -13,13 +15,7 @@ interface ItemData {
 })
 export class CommentsComponent implements OnInit {
 
-
-
-
-
-  constructor() {
-
-  }
+  constructor(private backBaseService: BackBaseService) {}
 
   listOfSelection = [
     {
@@ -45,11 +41,11 @@ export class CommentsComponent implements OnInit {
   ];
   isAllDisplayDataChecked = false;
   isIndeterminate = false;
-  listOfDisplayData: ItemData[] = [];
-  listOfAllData: ItemData[] = [];
+  listOfDisplayData: Comment1[] = [];
+  listOfAllData: Comment1[] = [];
   mapOfCheckedId: { [key: string]: boolean } = {};
 
-  currentPageDataChange($event: ItemData[]): void {
+  currentPageDataChange($event: Comment1[]): void {
     this.listOfDisplayData = $event;
     this.refreshStatus();
   }
@@ -66,13 +62,8 @@ export class CommentsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    for (let i = 0; i < 100; i++) {
-      this.listOfAllData.push({
-        id: i,
-        name: `Edward King ${i}`,
-        age: 32,
-        address: `London, Park Lane no. ${i}`
-      });
-    }
+    this.backBaseService.listAllComment().subscribe(
+      (comments: Comment1[]) => { this.listOfAllData = comments; }
+    );
   }
 }

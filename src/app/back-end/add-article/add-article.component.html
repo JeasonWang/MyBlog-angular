@@ -1,0 +1,13 @@
+<div>
+    <label>文章标题</label>
+    <input nz-input placeholder="Basic usage" [(ngModel)]="title" />
+</div>
+<div>
+    <label>文章简介</label>
+    <input nz-input placeholder="Basic usage" [(ngModel)]="summary" />
+</div>
+<div>
+    <label>是否定置</label>
+    <nz-switch #isTop1 [ngModel]="isTop" nzCheckedChildren="是" nzUnCheckedChildren="否"></nz-switch>
+</div>
+<button nz-button nzType="primary" (click)="addArticle()">增加</button>

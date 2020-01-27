@@ -14,17 +14,25 @@
             [nzIndeterminate]="isIndeterminate"
             (nzCheckedChange)="checkAll($event)"
           ></th>
-          <th>Name</th>
-          <th>Age</th>
-          <th>Address</th>
+          <th>id</th>
+          <th>留言内容</th>
+          <th>留言时间</th>
+          <th>邮箱</th>
+          <th>ip</th>
+          <th>有效性</th>
+          <th>姓名</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let data of rowSelectionTable.data">
           <td nzShowCheckbox [(nzChecked)]="mapOfCheckedId[data.id]" (nzCheckedChange)="refreshStatus()"></td>
+          <td>{{ data.id }}</td>
+          <td>{{ data.content }}</td>
+          <td>{{ data.createBy }}</td>
+          <td>{{ data.email }}</td>
+          <td>{{ data.ip }}</td>
+          <td>{{ data.isEffective }}</td>
           <td>{{ data.name }}</td>
-          <td>{{ data.age }}</td>
-          <td>{{ data.address }}</td>
         </tr>
       </tbody>
     </nz-table>

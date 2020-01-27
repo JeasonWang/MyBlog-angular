@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BackBaseService } from '../back-base.service';
+import { CategoryInfo } from '../../domain/backdata';
 
 @Component({
   selector: 'app-category',
@@ -7,9 +9,58 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoryComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: BackBaseService) {
 
-  ngOnInit() {
   }
 
+  listOfSelection = [
+    {
+      text: 'Select All Row',
+      onSelect: () => {
+        this.checkAll(true);
+      }
+    },
+    {
+      text: 'Select Odd Row',
+      onSelect: () => {
+        this.listOfDisplayData.forEach((data, index) => (this.mapOfCheckedId[data.id] = index % 2 !== 0));
+        this.refreshStatus();
+      }
+    },
+    {
+      text: 'Select Even Row',
+      onSelect: () => {
+        this.listOfDisplayData.forEach((data, index) => (this.mapOfCheckedId[data.id] = index % 2 === 0));
+        this.refreshStatus();
+      }
+    }
+  ];
+  isAllDisplayDataChecked = false;
+  isIndeterminate = false;
+  listOfDisplayData: CategoryInfo[] = [];
+  listOfAllData: CategoryInfo[] = [];
+  mapOfCheckedId: { [key: string]: boolean } = {};
+
+  currentPageDataChange($event: CategoryInfo[]): void {
+    this.listOfDisplayData = $event;
+    this.refreshStatus();
+  }
+
+  refreshStatus(): void {
+    this.isAllDisplayDataChecked = this.listOfDisplayData.every(item => this.mapOfCheckedId[item.id]);
+    this.isIndeterminate =
+      this.listOfDisplayData.some(item => this.mapOfCheckedId[item.id]) && !this.isAllDisplayDataChecked;
+  }
+
+  checkAll(value: boolean): void {
+    this.listOfDisplayData.forEach(item => (this.mapOfCheckedId[item.id] = value));
+    this.refreshStatus();
+  }
+
+  ngOnInit(): void {
+    this.service.listAllCategoryInfo().subscribe(
+      (categoryInfos: CategoryInfo[]) => { this.listOfAllData = categoryInfos; }
+    );
+    }
 }
+

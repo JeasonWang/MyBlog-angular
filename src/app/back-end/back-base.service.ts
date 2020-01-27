@@ -14,14 +14,11 @@ const httpOptions = {
 })
 export class BackBaseService {
 
-  private categoryListUrl = 'apidata/api/category/list';
-  private articleListUrl = 'apidata/api/article/list';
-  private articleLisSortUrl = 'apidata/api/article/list/sort';
 
   constructor(
     private http: HttpClient) { }
 
-  getlistAllLog(): Observable<SysLog[]> {
+  listAllLog(): Observable<SysLog[]> {
     return this.http.get<SysLog[]>('apidata/admin/sys/log')
       .pipe(
         catchError(this.handleError<SysLog[]>('getlistAllLog', []))
@@ -86,6 +83,21 @@ export class BackBaseService {
         catchError(this.handleError<CategoryInfo[]>('getCategoryInfo', []))
       );
   }
+
+  addCategory(categoryInfo: CategoryInfo): Observable<CategoryInfo> {
+    return this.http.post<CategoryInfo>('apidata/admin/category', categoryInfo, httpOptions)
+      .pipe(
+        catchError(this.handleError<CategoryInfo>('addCategory'))
+      );
+  }
+
+  modifyCategory(categoryInfo: CategoryInfo): Observable<CategoryInfo> {
+    return this.http.put<CategoryInfo>('apidata/admin/category', categoryInfo, httpOptions)
+      .pipe(
+        catchError(this.handleError<CategoryInfo>('addCategory'))
+      );
+  }
+
   replyComment(id: number): Observable<string> {
     return this.http.get<string>('apidata/admin/comment/reply/' + id)
       .pipe();
@@ -123,21 +135,21 @@ export class BackBaseService {
 
 
   getArticleList(): Observable<ArticleList[]> {
-    return this.http.get<ArticleList[]>(this.articleListUrl)
+    return this.http.get<ArticleList[]>('apidata/api/article/list')
       .pipe(
         catchError(this.handleError<ArticleList[]>('getHeroes', []))
       );
   }
 
   getArticleListSort(): Observable<ArticleList[]> {
-    return this.http.get<ArticleList[]>(this.articleLisSortUrl)
+    return this.http.get<ArticleList[]>('apidata/api/article/list/sort')
       .pipe(
         catchError(this.handleError<ArticleList[]>('getHeroes', []))
       );
   }
 
   getCategoryList(): Observable<CategoryList[]> {
-    return this.http.get<CategoryList[]>(this.categoryListUrl)
+    return this.http.get<CategoryList[]>('apidata/api/category/list')
       .pipe(
         catchError(this.handleError<CategoryList[]>('getHeroes', []))
       );

@@ -17,8 +17,9 @@ export interface CategoryList {
 }
 
 export interface SysLog {
-  id: string;
+  id: number;
   ip: string;
+  createBy: Date;
   remark: string;
   operateUrl: string;
   operateBy: string;
@@ -38,14 +39,14 @@ export interface ArticleWithPictureDto {
   top: boolean;              // 文章是否置顶
 }
 
-export interface CategoryInfo {
+export class CategoryInfo {
   id: number;
   name: string;
   number: number;
   createBy: Date;
   modifiedBy: Date;
 }
-export interface ArticleDto {
+export class ArticleDto {
   id: number;                // 主键
   title: string;           // 文章标题
   summary: string;         // 文章简介

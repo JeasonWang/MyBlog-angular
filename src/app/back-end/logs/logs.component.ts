@@ -63,7 +63,7 @@ export class LogsComponent implements OnInit {
   }
 
   public getlistAllLog(): void {
-    this.service.getlistAllLog()
+    this.service.listAllLog()
     .subscribe((logs: SysLog[]) => {
        this.listOfAllData = logs; });
   }
