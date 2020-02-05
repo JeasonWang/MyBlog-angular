@@ -1,4 +1,5 @@
 <div>
+    <h3>修改分类名称</h3>
     <nz-select nzPlaceHolder="Choose Category" nzAllowClear #selectlist>
         <nz-option nzValue={{item.id}} nzLabel={{item.name}} *ngFor="let item of categoryInfos"></nz-option>
     </nz-select>
@@ -9,6 +10,7 @@
 </div>
 
 <div>
+    <h3>新增分类</h3>
     <input nz-input placeholder="add category" [(ngModel)]="addvalue" class="categoryinput"/>
     <button nz-button nzType="primary" (click)="addCategory()">增加</button>
 </div>

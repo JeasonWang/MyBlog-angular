@@ -1,4 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { BackBaseService } from '../back-base.service';
+import { CategoryInfo, ArticleDto } from 'src/app/domain/backdata';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-article',
@@ -22,16 +25,33 @@ export class AddArticleComponent implements OnInit {
   // tbl_article_picture基础字段
   articlePictureId: number;  // ArticlePicture表主键
   pictureUrl: string;      // 文章题图url
+  categoryInfos: CategoryInfo[] = [];
+  @ViewChild('selectlist', { static: true }) selectlist;
 
-  @ViewChild('isTop1', { static:true }) isTop1;
 
-  constructor() { }
+  constructor(private backBaseService: BackBaseService,
+    private router: Router) { }
 
   ngOnInit() {
-    
+    this.initList();
   }
+
+  initList() {
+    this.backBaseService.listAllCategoryInfo().subscribe(
+      (re: CategoryInfo[]) => { this.categoryInfos = re; }
+    );
+  }
+
   addArticle(): void {
-    alert(this.isTop+" : "+this.isTop1.selector.value);
+    let articleDto: ArticleDto = new ArticleDto();
+    articleDto.title = this.title;
+    articleDto.summary = this.summary;
+    articleDto.isTop = this.isTop;
+    articleDto.content = this.content;
+    articleDto.pictureUrl = this.pictureUrl;
+    articleDto.categoryId = this.selectlist.value;
+    this.backBaseService.addArticle(articleDto).subscribe();
+    this.router.navigateByUrl("/back/article");
   }
 
 }

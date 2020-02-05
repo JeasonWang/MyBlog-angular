@@ -1,13 +1,27 @@
 <div>
     <label>文章标题</label>
-    <input nz-input placeholder="Basic usage" [(ngModel)]="title" />
+    <input nz-input placeholder="Basic title" [(ngModel)]="title" />
 </div>
 <div>
     <label>文章简介</label>
-    <input nz-input placeholder="Basic usage" [(ngModel)]="summary" />
+    <textarea rows="4" nz-input [(ngModel)]="summary"></textarea>
 </div>
 <div>
-    <label>是否定置</label>
-    <nz-switch #isTop1 [ngModel]="isTop" nzCheckedChildren="是" nzUnCheckedChildren="否"></nz-switch>
+    <label>是否顶置:</label>
+    <label nz-checkbox [(ngModel)]="isTop"></label>
+    <label class="categorylabel">文章分类:</label>
+    <nz-select nzPlaceHolder="Choose Category" nzAllowClear #selectlist>
+        <nz-option nzValue={{item.id}} nzLabel={{item.name}} *ngFor="let item of categoryInfos"></nz-option>
+    </nz-select>
 </div>
-<button nz-button nzType="primary" (click)="addArticle()">增加</button>
+<div>
+    <label>文章配图</label>
+    <input nz-input placeholder="picture url" [(ngModel)]="pictureUrl" />
+</div>
+<div>
+    <label>文章内容</label>
+    <textarea rows="8" nz-input [(ngModel)]="content"></textarea>
+</div>
+<div>
+    <button nz-button nzType="primary" (click)="addArticle()">增加</button>
+</div>

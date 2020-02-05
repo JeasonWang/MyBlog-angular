@@ -6,42 +6,39 @@
 .left{
   width: 70%;
 }
-
+.allArticle {
+  float: right;
+}
 .excerpt {
-  background-color: #fff;
+  background-color: rgb(243, 240, 240);
   padding: 20px 15px 30px 20px;
   margin-bottom: 10px;
   position: relative;
-  height: 200px;
-  border: grey solid 1px;
+  height: 250px;
 }
 .excerpt header {
   margin: 0 10px 15px 0;
 }
-
+.headerbox {
+  color: #d9534f;
+}
 .excerpt header .label {
   margin-right: 5px;
   position: relative;
   top: -2px;
   padding: 2px 6px 4px;
 }
-.badge-important, .label-important {
+.badge-important {
   background-color: #d9534f;
 }
-.label .label-arrow {
+.label {
   top: 7px;
   right: -4px;
   border-left: 4px solid #000;
   border-top: 4px solid transparent;
   border-bottom: 4px solid transparent;
 }
-.label-arrow {
-  position: absolute;
-  width: 0;
-  height: 0;
-  vertical-align: top;
-  content: "";
-}
+
 i {
   font-style: italic;
 }
@@ -95,16 +92,19 @@ a {
 .right{
   margin-left: 1%;
   width: 29%;
-  border: green solid 1px;
 }
 .rightdiv {
   width: 100%;
+  background-color: rgb(243, 240, 240);
 }
 
 /*1*/
 .row2 {
   display: flex;
   margin: auto;
+}
+.row2 img {
+  padding-left: 20px;
 }
 .row3 {
   display: flex;
@@ -129,7 +129,6 @@ a {
 .widget {
   clear: both;
   margin-bottom: 10px;
-  background-color: #fff;
 }
 .zhuti {
   margin-left: 50px;
@@ -201,21 +200,13 @@ a {
 
 
 /*4*/
-.hot-posts {
-  background-color: #fff;
-}
 .hot-posts h2 {
   line-height: 45px;
   font-weight: 400;
   color: #1abc9c;
   font-size: 16px;
 }
-.title {
-  position: relative;
-  height: 45px;
-  border-bottom: 1px solid #90bba8;
-  margin: 5px 20px;
-}
+
 .hot-posts ul {
   margin: 0 20px 10px;
   padding: 15px 0 10px;

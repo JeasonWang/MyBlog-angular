@@ -1,26 +1,20 @@
-<header id="header" class="header">
-  <div class="container-inner">
-   <div class="yusi-logo">
+<header class="header">
+  <div class="logo">
     <a href="/">
       <h1>
-       <span class="yusi-mono">技术</span>
-      <span class="yusi-bloger">王欢的个人博客</span>
+        <span class="mono">技术</span>
+        <span>王欢的个人博客</span>
       </h1>
     </a>
-    </div>
   </div>
 
-  <div id="nav-header" class="navbar">
-
+  <div class="navbar">
     <ul class="nav">
-      <li id="menu-item-44" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-44"><a href="home">首页</a></li>
-      <li id="menu-item-14" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-14"><a href="blog">博客列表</a></li>
-      <li id="menu-item-1131" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1131"><a href="blog">其他技术</a></li>
-      <li id="menu-item-4571" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4571"><a href="resume">个人简历</a></li>
-      <li id="menu-item-7951" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7951"><a href="about">留言板</a></li>
+      <li><a [routerLink]="['/blog']" routerLinkActive="router-link-active">首页</a></li>
+      <li><a [routerLink]="['/articles']" routerLinkActive="router-link-active">博客列表</a></li>
+      <li><a [routerLink]="['/home']" routerLinkActive="router-link-active">home</a></li>
+      <li><a [routerLink]="['/resume']" routerLinkActive="router-link-active">个人简历</a></li>
+      <li><a [routerLink]="['/about']" routerLinkActive="router-link-active">留言板</a></li>
   </ul>
-  <div class="screen-mini">
-    <button data-type="screen-nav" class="btn btn-inverse screen-nav"><i class="fa fa-list"></i></button>
-  </div>
 </div>
 </header>

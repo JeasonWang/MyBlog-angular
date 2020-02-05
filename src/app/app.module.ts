@@ -30,6 +30,7 @@ import { LogsComponent } from './back-end/logs/logs.component';
 import { ViewsComponent } from './back-end/views/views.component';
 import { AddCategoryComponent } from './back-end/add-category/add-category.component';
 import { AddArticleComponent } from './back-end/add-article/add-article.component';
+import { ArticlesComponent } from './fore-end/articles/articles.component';
 
 registerLocaleData(zh);
 
@@ -58,7 +59,8 @@ registerLocaleData(zh);
     LogsComponent,
     ViewsComponent,
     AddCategoryComponent,
-    AddArticleComponent
+    AddArticleComponent,
+    ArticlesComponent
   ],
   imports: [
     BrowserModule,

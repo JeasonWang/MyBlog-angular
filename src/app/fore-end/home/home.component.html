@@ -6,15 +6,11 @@
   </div>
 
   <!--文章信息-->
-  <div id="articleInfo">
-    <!--文章标题-->
-    <div>
-      <h1 id="articleTitle">标题</h1>
-    </div>
-
+  <div id="articleInfo" *ngIf="articleListLatests.length>0">
     <!--文章简介-->
     <div>
-      <h4 id="articleSummary"><span *ngIf="articleListLatests.length>0">{{articleListLatests[0].summary}}</span></h4>
+      <h1>{{articleListLatests[0].title}}</h1>
+      <h4>{{articleListLatests[0].summary}}</h4>
     </div>
     <!--查看文章按钮-->
     <button id="showArticle" type="button" class="btn" articleId="">查看<span class="glyphicon glyphicon-chevron-right"></span></button>

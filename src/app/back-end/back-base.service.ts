@@ -31,7 +31,7 @@ export class BackBaseService {
         catchError(this.handleError<SysView[]>('getlistAllView', []))
       );
   }
-  getlistAllArticleInfo(): Observable<ArticleWithPictureDto[]> {
+  listAllArticleInfo(): Observable<ArticleWithPictureDto[]> {
     return this.http.get<ArticleWithPictureDto[]>('apidata/api/article/list')
       .pipe(
         catchError(this.handleError<ArticleWithPictureDto[]>('getlistAllArticleInfo', []))
@@ -54,6 +54,10 @@ export class BackBaseService {
       .pipe(
         catchError(this.handleError<ArticleDto[]>('getArticleById', []))
       );
+  }
+  deleteArticle(id: number) {
+    alert('apidata/admin/article/' + id);
+    return this.http.delete('apidata/admin/article/' + id);
   }
   listAllCategoryInfo(): Observable<CategoryInfo[]> {
     return this.http.get<CategoryInfo[]>('apidata/api/category/list')
@@ -95,6 +99,13 @@ export class BackBaseService {
     return this.http.put<CategoryInfo>('apidata/admin/category', categoryInfo, httpOptions)
       .pipe(
         catchError(this.handleError<CategoryInfo>('addCategory'))
+      );
+  }
+
+  addArticle(articleDto: ArticleDto): Observable<ArticleDto> {
+    return this.http.post<ArticleDto>('apidata/admin/article', articleDto, httpOptions)
+      .pipe(
+        catchError(this.handleError<ArticleDto>('addArticle'))
       );
   }
 

@@ -14,8 +14,21 @@ export class ArticleComponent implements OnInit {
   constructor(private service: BackBaseService) {}
 
   ngOnInit() {
-    this.service.getlistAllArticleInfo().subscribe(
-      (articleWithPictureDtos: ArticleWithPictureDto[]) => { this.articleWithPictureDtos = articleWithPictureDtos; }
+    setTimeout(() => {
+      this.listAllArticleInfo();
+    }, 100);
+  }
+
+  listAllArticleInfo() {
+    this.service.listAllArticleInfo().subscribe(
+      (articleWithPictureDtos: ArticleWithPictureDto[]) => { 
+        this.articleWithPictureDtos = articleWithPictureDtos; }
     );
-    }
+  }
+  deleteArticle(id: number) {
+    this.service.deleteArticle(id).subscribe(
+      () => console.log('delete '+id)
+    );
+    this.listAllArticleInfo();
+  }
 }

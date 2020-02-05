@@ -3,21 +3,18 @@
 <div id="main">
 
   <div class="left">
-    <article class="excerpt" *ngFor="let item of [1,2,3,4,5,6,7,8,9]">
+    <article class="excerpt" *ngFor="let item of articleLists">
       <header>
-        <h4>
-          <a class="label label-important" href="https://cuiqingcai.com/category/technique/python">Python<i class="label-arrow"></i></a>
-          <a target="_blank" href="https://cuiqingcai.com/8703.html" title="新书发售 限时折扣｜《Python3 反爬虫原理与绕过实战》">新书发售 限时折扣｜《Python3 反爬虫原理与绕过实战》  </a>
-        </h4>
+        <div class="headerbox">
+          <h2><a>{{item.title}}</a></h2>
+        </div>
       </header>
       <div class="focus">
         <a target="_blank" href="https://cuiqingcai.com/8703.html">
           <img class="thumb" src="https://cuiqingcai.com/wp-content/themes/Yusi/timthumb.php?src=https://qiniu.cuiqingcai.com/wp-content/uploads/2020/01/c2da3d6e-0e00-4b39-bac0-06ebff42b0a7_0.png&amp;h=123&amp;w=200&amp;q=90&amp;zc=1&amp;ct=1" alt="新书发售 限时折扣｜《Python3 反爬虫原理与绕过实战》">
         </a>
       </div>
-      <span class="note"> 无论是在学习还是工作中，反爬虫技术是所有爬虫工程师都要面对的问题。
-    常见的反爬虫原理和绕过技巧也是中高级爬虫工程师面试中关注的焦点， 尤其是那些竞争激烈的大型互联网企业。作为一名开发者，了解反爬虫原理和绕过技巧有助于设计出更合理的反爬虫策略，这会使你在同行中脱颖而出，大放异彩。
-    ...</span>
+      <span class="note">{{item.summary}}</span>
       <p class="auth-span">
           <span class="muted"><i class="fa fa-clock-o"></i> 2020-01-03 19:55&nbsp;&nbsp;</span>
           <span class="muted"><i class="fa fa-comments-o"></i> <a target="_blank" href="https://cuiqingcai.com/8703.html#comments">2评论&nbsp;&nbsp;</a></span>
@@ -25,7 +22,9 @@
           <span class="muted"><i class="fa fa-comments-o"></i> <a target="_blank" href="https://cuiqingcai.com/8703.html#comments">阅读全文</a></span>
       </p>
     </article>
-
+    <div>
+      <button class="allArticle" nz-button nzType="primary" (click)="allArticle()">所有文章</button>
+    </div>
   </div>
 
   <div class="right">
@@ -41,8 +40,8 @@
             <img src="../../../assets/img/avatar(3).jpg" alt="QR Code" style="width: 150px; height: 120px;">
           </div>
           <div class="zhuti">
-            <p>博客初心</p>
-            <p>程序人生，永不止步</p>
+            <span>博客初心</span><br>
+            <span>程序人生，永不止步</span>
           </div>
         </div>
         <div class="row3">
@@ -89,6 +88,7 @@
         </ul>
       </div>
     </div>
+    
     <div class="rightdiv">
       <div class="widget d_tag">
         <div class="title">

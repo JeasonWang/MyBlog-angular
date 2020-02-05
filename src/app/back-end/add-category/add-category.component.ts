@@ -34,7 +34,6 @@ export class AddCategoryComponent implements OnInit {
   }
 
   modifyCategory(): void {
-    alert(this.selectlist.value);
     let categoryInfo: CategoryInfo = new CategoryInfo();
     categoryInfo.name = this.modifyvalue;
     categoryInfo.id = this.selectlist.value;

@@ -10,11 +10,12 @@
   </thead>
   <tbody>
     <tr *ngFor="let data of basicTable.data">
+      
       <td>{{ data.title }}</td>
       <td>{{ data.top }}</td>
       <td>{{ data.traffic }}</td>
       <td>{{ data.summary }}</td>
-      <td><button nz-button nzType="primary">删除</button></td>
+      <td><button nz-button nzType="primary" (click)="deleteArticle(data.id)">删除</button></td>
     </tr>
   </tbody>
 </nz-table>

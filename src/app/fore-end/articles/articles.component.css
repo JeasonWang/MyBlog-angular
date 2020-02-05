@@ -1,0 +1,88 @@
+#main{
+    width: 80%;
+    margin: auto;
+    display: flex;
+  }
+  .left{
+    width: 100%;
+  }
+  .allArticle {
+    float: right;
+  }
+  .excerpt {
+    background-color: rgb(243, 240, 240);
+    padding: 20px 15px 30px 20px;
+    margin-bottom: 10px;
+    position: relative;
+    height: 250px;
+  }
+  .excerpt header {
+    margin: 0 10px 15px 0;
+  }
+  .headerbox {
+    color: #d9534f;
+  }
+  .excerpt header .label {
+    margin-right: 5px;
+    position: relative;
+    top: -2px;
+    padding: 2px 6px 4px;
+  }
+  .badge-important {
+    background-color: #d9534f;
+  }
+  .label {
+    top: 7px;
+    right: -4px;
+    border-left: 4px solid #000;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+  }
+  
+  i {
+    font-style: italic;
+  }
+  a {
+    color: #00a67c;
+    text-decoration: none;
+  }
+  
+  .excerpt .focus {
+    float: left;
+    margin: 0 20px 0 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    display: table;
+  }
+  
+  .excerpt .note {
+    color: #777;
+    line-height: 24px;
+    margin-bottom: 0;
+    font-style: normal;
+  }
+  .excerpt p.auth-span {
+    float: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  .article-header .cate, .article-header .muted, .excerpt .muted {
+    margin-right: 20px;
+  }
+  .muted {
+    color: #999;
+  }
+  .excerpt .muted {
+    font-size: 13px;
+  }
+  .excerpt .muted .action, .hot-posts .muted .action {
+    background-color: #fff!important;
+    border: 0;
+    padding: 0;
+    color: #f78585!important;
+    font-size: 13px;
+  }
+  
+ 

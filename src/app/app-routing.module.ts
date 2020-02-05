@@ -17,12 +17,14 @@ import { LogsComponent } from './back-end/logs/logs.component';
 import { ViewsComponent } from './back-end/views/views.component';
 import { AddCategoryComponent } from './back-end/add-category/add-category.component';
 import { AddArticleComponent } from './back-end/add-article/add-article.component';
+import { ArticlesComponent } from './fore-end/articles/articles.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'login', component: LoginComponent},
   { path: 'home', component: HomeComponent },
+  { path: 'articles', component: ArticlesComponent },
   { path: 'about', component: AboutComponent },
   { path: 'resume', component: ResumeComponent },
   { path: 'blog', component: BlogComponent },

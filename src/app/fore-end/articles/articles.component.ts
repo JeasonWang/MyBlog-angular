@@ -3,11 +3,11 @@ import { CategoryList, ArticleList } from 'src/app/domain/backdata';
 import { ForeBaseService } from '../fore-base.service';
 
 @Component({
-  selector: 'app-blog',
-  templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.css']
+  selector: 'app-articles',
+  templateUrl: './articles.component.html',
+  styleUrls: ['./articles.component.css']
 })
-export class BlogComponent implements OnInit {
+export class ArticlesComponent implements OnInit {
   categoryLists: CategoryList[] = [];
   articleLists: ArticleList[] = [];
 
