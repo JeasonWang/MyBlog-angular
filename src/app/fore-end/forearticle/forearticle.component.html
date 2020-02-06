@@ -3,27 +3,20 @@
 <div id="main">
 
   <div class="left">
-    <article class="excerpt" *ngFor="let item of articleLists">
-      <header>
-        <div class="headerbox">
-          <h2><a>{{item.title}}</a></h2>
-        </div>
-      </header>
-      <div class="focus">
-        <a target="_blank" href="https://cuiqingcai.com/8703.html">
-          <img class="thumb" src="https://cuiqingcai.com/wp-content/themes/Yusi/timthumb.php?src=https://qiniu.cuiqingcai.com/wp-content/uploads/2020/01/c2da3d6e-0e00-4b39-bac0-06ebff42b0a7_0.png&amp;h=123&amp;w=200&amp;q=90&amp;zc=1&amp;ct=1" alt="新书发售 限时折扣｜《Python3 反爬虫原理与绕过实战》">
-        </a>
-      </div>
-      <span class="note">{{item.summary}}</span>
-      <p class="auth-span">
-          <span class="muted"><i class="fa fa-clock-o"></i> 2020-01-03 19:55&nbsp;&nbsp;</span>
-          <span class="muted"><i class="fa fa-comments-o"></i> <a href="">评论&nbsp;&nbsp;</a></span>
-          <span class="muted"><i class="fa fa-comments-o"></i> <a href="">发表评论&nbsp;&nbsp;</a></span>
-          <span class="muted"><i class="fa fa-comments-o"></i> <a [routerLink]="['/forearticle']" routerLinkActive="router-link-active" [queryParams]='{id:item.id}' >阅读全文</a></span>
-      </p>
-    </article>
     <div>
-      <button class="allArticle" nz-button nzType="primary" (click)="allArticle()">所有文章</button>
+        <div class="header">
+            <h1>name:</h1>
+            <h2>{{articleCommentDto.name}}</h2>
+        </div>
+        <div class="content">
+            {{articleCommentDto.content}}
+        </div>
+        <div class="time">
+            <p>
+                <span>{{articleCommentDto.email}}</span>
+                <span>{{articleCommentDto.createBy}}</span>
+            </p>
+        </div>
     </div>
   </div>
 

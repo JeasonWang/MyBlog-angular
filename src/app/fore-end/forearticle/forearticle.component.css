@@ -1,0 +1,182 @@
+#main{
+    width: 80%;
+    margin: auto;
+    display: flex;
+}
+.left{
+    width: 70%;
+    background-color: rgb(243, 240, 240);
+    height: 1000px;
+    margin-top: 6px;
+}
+.header {
+    background-color: rgb(224, 218, 218);
+    border-radius: 2px;
+}
+.content {
+    font-size: large;
+    padding: 2px 10px;
+}
+.time {
+    float: right;
+    padding-right: 20px;
+}
+
+
+.right{
+    margin-left: 1%;
+    width: 29%;
+}
+.rightdiv {
+    width: 100%;
+    background-color: rgb(243, 240, 240);
+}
+
+/*1*/
+.row2 {
+    display: flex;
+    margin: auto;
+}
+.row2 img {
+    padding-left: 20px;
+}
+.row3 {
+    display: flex;
+    margin: 30px 0 20px 30px;
+}
+.weixin {
+    padding-left: 20px;
+}
+.row4 {
+    display: flex;
+    margin-top: 20px
+}
+.row44 {
+    border: rgb(212, 210, 210) solid 1px;
+    width: 50%; text-align: center;
+    height: 35px;
+}
+
+
+/*2*/
+
+.widget {
+    clear: both;
+    margin-bottom: 10px;
+}
+.zhuti {
+    margin-left: 50px;
+}
+.title {
+    position: relative;
+    height: 45px;
+    border-bottom: 1px solid #90bba8;
+    margin: 5px 20px;
+}
+.d_postlist ul {
+    padding: 0 20px 20px;
+}
+
+.like-li {
+    height: 95px;
+}
+a {
+    color: #00a67c;
+    text-decoration: none;
+}
+.d_postlist li a {
+    font-size: 14px;
+}
+.d_postlist .thumbnail {
+    float: left;
+}
+.d_postlist .thumbnail img {
+    width: 100px;
+    height: 64px;
+    margin: 0 auto;
+}
+
+.d_postlist .text {
+    display: block;
+    height: 50px;
+}
+.d_postlist .muted {
+    padding-left: 10px;
+}
+.muted {
+    color: #999;
+}
+
+
+/*3*/
+.d_tags {
+    padding: 12px 10px 15px 20px;
+}
+
+.d_tags a {
+    width: 44%;
+    opacity: .7;
+    filter: alpha(opacity=80);
+    color: #fff;
+    background-color: #00a67c;
+    display: inline-block;
+    margin: 0 5px 5px 0;
+    padding: 2px 6px;
+    line-height: 21px;
+}
+a {
+    color: #00a67c;
+    text-decoration: none;
+}
+
+
+
+
+
+/*4*/
+.hot-posts h2 {
+    line-height: 45px;
+    font-weight: 400;
+    color: #1abc9c;
+    font-size: 16px;
+}
+
+.hot-posts ul {
+    margin: 0 20px 10px;
+    padding: 15px 0 10px;
+    list-style: none;
+    overflow: hidden;
+}
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    list-style: none;
+}
+.hot-posts li {
+    overflow: hidden;
+    clear: both;
+    margin-bottom: 10px;
+    height: 20px;
+}
+li {
+    line-height: 20px;
+}
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+
+.hot-posts .label {
+    margin-right: 8px;
+    padding: 2px 7px;
+    top: -1px;
+}
+.label-1 {
+    background-color: #fd8c84;
+}

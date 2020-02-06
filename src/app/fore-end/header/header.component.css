@@ -17,6 +17,8 @@
   clear: both;
 }
 .navbar .nav {
+  width: 80%;
+  padding-left: 0px;
   position: relative;
   left: 0;
   display: block;

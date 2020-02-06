@@ -71,7 +71,7 @@ export class ArticleDto {
   pictureUrl: string;      // 文章题图url
 }
 
-export interface Comment1 {
+export class Comment1 {
   id: number;
   content: string;
   createBy: Date;

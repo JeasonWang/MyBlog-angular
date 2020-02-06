@@ -31,6 +31,7 @@ import { ViewsComponent } from './back-end/views/views.component';
 import { AddCategoryComponent } from './back-end/add-category/add-category.component';
 import { AddArticleComponent } from './back-end/add-article/add-article.component';
 import { ArticlesComponent } from './fore-end/articles/articles.component';
+import { ForearticleComponent } from './fore-end/forearticle/forearticle.component';
 
 registerLocaleData(zh);
 
@@ -60,7 +61,8 @@ registerLocaleData(zh);
     ViewsComponent,
     AddCategoryComponent,
     AddArticleComponent,
-    ArticlesComponent
+    ArticlesComponent,
+    ForearticleComponent
   ],
   imports: [
     BrowserModule,

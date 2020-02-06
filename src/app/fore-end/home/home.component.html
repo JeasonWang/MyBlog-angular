@@ -1,28 +1,3 @@
 <app-header></app-header>
-<div id="content">
-  <!--文章大题图-->
-  <div id="articlePicture">
-    <img src="../../assets/img/about/titu.jpg">
-  </div>
-
-  <!--文章信息-->
-  <div id="articleInfo" *ngIf="articleListLatests.length>0">
-    <!--文章简介-->
-    <div>
-      <h1>{{articleListLatests[0].title}}</h1>
-      <h4>{{articleListLatests[0].summary}}</h4>
-    </div>
-    <!--查看文章按钮-->
-    <button id="showArticle" type="button" class="btn" articleId="">查看<span class="glyphicon glyphicon-chevron-right"></span></button>
-  </div>
-
-  <!--右下角的题图-->
-  <div class="smallArticlePictures">
-    <div *ngIf="articleListLatests.length>0">
-      <div class="smallPictures" *ngFor="let item of articleListLatests">
-        <img src="../../assets/img/about/titu.jpg" picturelUrl='item.picturelUrl' location="0" articleId="item.id" title="item.title" summary="item.summary" />
-      </div>
-    </div>
-  </div>
-</div>
-<app-footer></app-footer>
+home
+<app-footer2></app-footer2>

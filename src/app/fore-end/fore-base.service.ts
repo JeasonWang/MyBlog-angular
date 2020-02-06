@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { ArticleList, CategoryList } from '../domain/backdata';
+import { ArticleList, CategoryList, Comment1 } from '../domain/backdata';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -49,6 +49,23 @@ export class ForeBaseService {
         catchError(this.handleError<CategoryList[]>('getHeroes', []))
       );
   }
+
+  listAllComment(): Observable<Comment1[]> {
+    return this.http.get<Comment1[]>("apidata/api/comment/list")
+      .pipe(
+        catchError(this.handleError<Comment1[]>('listAllComment', []))
+      );
+  }
+  addMessage(comment: Comment1) {
+    return this.http.post("apidata/api/comment", comment, httpOptions);
+  }
+  getArticleById(id: number) {
+    return this.http.get('apidata/api/article/' + id);
+  }
+
+
+
+
 
 
 

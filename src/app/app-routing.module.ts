@@ -18,6 +18,7 @@ import { ViewsComponent } from './back-end/views/views.component';
 import { AddCategoryComponent } from './back-end/add-category/add-category.component';
 import { AddArticleComponent } from './back-end/add-article/add-article.component';
 import { ArticlesComponent } from './fore-end/articles/articles.component';
+import { ForearticleComponent } from './fore-end/forearticle/forearticle.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'home', component: HomeComponent },
   { path: 'articles', component: ArticlesComponent },
+  { path: 'forearticle', component: ForearticleComponent },
   { path: 'about', component: AboutComponent },
   { path: 'resume', component: ResumeComponent },
   { path: 'blog', component: BlogComponent },
