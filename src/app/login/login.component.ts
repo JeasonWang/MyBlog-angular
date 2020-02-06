@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   password = '';
   back = false;
   user: User;
+  user1: User;
 
   constructor(private LoginService: LoginserviceService, private router: Router) { }
 
@@ -23,22 +24,24 @@ export class LoginComponent implements OnInit {
 
   login(): void {
     this.user = new User();
+    this.user1 = new User();
     this.user.username = this.username;
     this.user.password = this.password;
     this.LoginService.login(this.user).subscribe(
-      (user1: User) => { this.user = user1;}
+      (re: User) => { 
+        this.user1 = re;
+      }
     );
     setTimeout(() => {
-      if(this.user != null){
+      if(this.user1 !== null && this.user.username === this.user1.username && this.user.password === this.user1.password){
         this.back = true;
-        return;
       }
-    }, 100);
-    if (this.back) {
-      this.router.navigateByUrl('/back');
-    }
+      if (this.back) {
+        this.router.navigateByUrl('/back');
+      }else{
+        alert("用户名或者密码错误！")
+      }
+    }, 1000);
+    
   }
-
-
-
 }
