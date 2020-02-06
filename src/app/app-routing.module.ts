@@ -22,7 +22,7 @@ import { ForearticleComponent } from './fore-end/forearticle/forearticle.compone
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full'},
+  { path: '', redirectTo: '/blog', pathMatch: 'full'},
   { path: 'login', component: LoginComponent},
   { path: 'home', component: HomeComponent },
   { path: 'articles', component: ArticlesComponent },
