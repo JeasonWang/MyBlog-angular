@@ -5,16 +5,20 @@
   <div class="left">
     <div>
         <div class="header">
-            <h1>name:</h1>
-            <h2>{{articleCommentDto.name}}</h2>
+            <h1>题目: {{articleDto.title}}</h1>
         </div>
         <div class="content">
-            {{articleCommentDto.content}}
+          <h5>简介：</h5>
+          <p>{{articleDto.summary}}</p>
         </div>
-        <div class="time">
+        <div class="content">
+          <h5>内容：</h5>
+          <p>{{articleDto.content}}</p>
+        </div>
+        <div class="dibu">
             <p>
-                <span>{{articleCommentDto.email}}</span>
-                <span>{{articleCommentDto.createBy}}</span>
+                <span>{{articleDto.traffic}}</span>
+                <span>{{articleDto.createBy}}</span>
             </p>
         </div>
     </div>
@@ -81,7 +85,7 @@
         </ul>
       </div>
     </div>
-    
+
     <div class="rightdiv">
       <div class="widget d_tag">
         <div class="title">

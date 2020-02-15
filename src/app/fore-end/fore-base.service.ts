@@ -51,13 +51,13 @@ export class ForeBaseService {
   }
 
   listAllComment(): Observable<Comment1[]> {
-    return this.http.get<Comment1[]>("apidata/api/comment/list")
+    return this.http.get<Comment1[]>('apidata/api/comment/list')
       .pipe(
         catchError(this.handleError<Comment1[]>('listAllComment', []))
       );
   }
   addMessage(comment: Comment1) {
-    return this.http.post("apidata/api/comment", comment, httpOptions);
+    return this.http.post('apidata/api/comment', comment, httpOptions);
   }
   getArticleById(id: number) {
     return this.http.get('apidata/api/article/' + id);

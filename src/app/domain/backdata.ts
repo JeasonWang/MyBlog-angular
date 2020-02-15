@@ -75,7 +75,7 @@ export class Comment1 {
   id: number;
   content: string;
   createBy: Date;
-  email: String;
+  email: string;
   name: string;
   ip: string;
   isEffective: boolean;
