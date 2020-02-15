@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
     this.user.username = this.username;
     this.user.password = this.password;
     this.LoginService.login(this.user).subscribe(
-      (re: User) => { 
+      (re: User) => {
         this.user1 = re;
       }
     );
@@ -38,10 +38,9 @@ export class LoginComponent implements OnInit {
       }
       if (this.back) {
         this.router.navigateByUrl('/back');
-      }else{
-        alert("用户名或者密码错误！")
+      } else {
+        alert('用户名或者密码错误！');
       }
     }, 1000);
-    
   }
 }

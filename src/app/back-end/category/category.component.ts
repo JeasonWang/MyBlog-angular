@@ -58,9 +58,19 @@ export class CategoryComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.listAllCategoryInfo();
+  }
+
+  listAllCategoryInfo() {
     this.service.listAllCategoryInfo().subscribe(
       (categoryInfos: CategoryInfo[]) => { this.listOfAllData = categoryInfos; }
     );
-    }
+  }
+  deleteCategory(id: number) {
+    this.service.deleteCategoryInfo(id).subscribe();
+    setTimeout(() => {
+      this.listAllCategoryInfo();
+    }, 100);
+  }
 }
 

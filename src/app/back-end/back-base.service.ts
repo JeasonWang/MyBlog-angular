@@ -56,7 +56,6 @@ export class BackBaseService {
       );
   }
   deleteArticle(id: number) {
-    alert('apidata/admin/article/' + id);
     return this.http.delete('apidata/admin/article/' + id);
   }
   listAllCategoryInfo(): Observable<CategoryInfo[]> {
@@ -65,7 +64,9 @@ export class BackBaseService {
         catchError(this.handleError<CategoryInfo[]>('listAllCategoryInfo', []))
       );
   }
-
+  deleteCategoryInfo(id: number) {
+    return this.http.delete('apidata/admin/category/' + id);
+  }
   listAllComment(): Observable<Comment1[]> {
     return this.http.get<Comment1[]>('apidata/api/comment/list')
       .pipe(

@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CategoryInfo } from 'src/app/domain/backdata';
 import { BackBaseService } from '../back-base.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-category',
@@ -13,7 +14,8 @@ export class AddCategoryComponent implements OnInit {
   categoryInfos: CategoryInfo[] = [];
   @ViewChild('selectlist', { static: true }) selectlist;
 
-  constructor(private backBaseService: BackBaseService) { }
+  constructor(private backBaseService: BackBaseService,
+              private router: Router) { }
 
   ngOnInit() {
     this.initList();
@@ -25,16 +27,17 @@ export class AddCategoryComponent implements OnInit {
   }
 
   addCategory() {
-    let categoryInfo: CategoryInfo = new CategoryInfo();
+    const categoryInfo: CategoryInfo = new CategoryInfo();
     categoryInfo.name = this.addvalue;
     this.backBaseService.addCategory(categoryInfo).subscribe();
     setTimeout(() => {
       this.initList();
+      this.router.navigateByUrl('/back/category');
     }, 100);
   }
 
   modifyCategory(): void {
-    let categoryInfo: CategoryInfo = new CategoryInfo();
+    const categoryInfo: CategoryInfo = new CategoryInfo();
     categoryInfo.name = this.modifyvalue;
     categoryInfo.id = this.selectlist.value;
     this.backBaseService.modifyCategory(categoryInfo).subscribe();

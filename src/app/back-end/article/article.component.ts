@@ -21,14 +21,14 @@ export class ArticleComponent implements OnInit {
 
   listAllArticleInfo() {
     this.service.listAllArticleInfo().subscribe(
-      (articleWithPictureDtos: ArticleWithPictureDto[]) => { 
+      (articleWithPictureDtos: ArticleWithPictureDto[]) => {
         this.articleWithPictureDtos = articleWithPictureDtos; }
     );
   }
   deleteArticle(id: number) {
-    this.service.deleteArticle(id).subscribe(
-      () => console.log('delete '+id)
-    );
-    this.listAllArticleInfo();
+    this.service.deleteArticle(id).subscribe();
+    setTimeout(() => {
+      this.listAllArticleInfo();
+    }, 100);
   }
 }

@@ -30,7 +30,7 @@ export class AddArticleComponent implements OnInit {
 
 
   constructor(private backBaseService: BackBaseService,
-    private router: Router) { }
+              private router: Router) { }
 
   ngOnInit() {
     this.initList();
@@ -43,7 +43,7 @@ export class AddArticleComponent implements OnInit {
   }
 
   addArticle(): void {
-    let articleDto: ArticleDto = new ArticleDto();
+    const articleDto: ArticleDto = new ArticleDto();
     articleDto.title = this.title;
     articleDto.summary = this.summary;
     articleDto.isTop = this.isTop;
@@ -51,7 +51,7 @@ export class AddArticleComponent implements OnInit {
     articleDto.pictureUrl = this.pictureUrl;
     articleDto.categoryId = this.selectlist.value;
     this.backBaseService.addArticle(articleDto).subscribe();
-    this.router.navigateByUrl("/back/article");
+    this.router.navigateByUrl('/back/article');
   }
 
 }
